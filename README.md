@@ -24,9 +24,10 @@
 ```shell
 cd .\Pixiv-Nginx\nginx-1.26.1\
 start .\nginx.exe
-tail  logs/error.log
 .\nginx.exe -s reload
 .\nginx.exe -s stop
+tail  logs/error.log
+start .\nginx.exe
 wget https://github.com/mashirozx/Pixiv-Nginx --no-check-certificate
 ```
 
@@ -44,6 +45,35 @@ wget https://github.com/mashirozx/Pixiv-Nginx --no-check-certificate
 > 
 > 2024-07-24 10:30:48 (1.96 MB/s) - “Pixiv-Nginx” 已保存 [352364]
 > ```
+>
+> ```shell
+> PS D:\mytest\nginx-1.26.1> ipconfig -flushdns
+> 
+> Windows IP 配置
+> 
+> 已成功刷新 DNS 解析缓存。
+> PS D:\mytest\nginx-1.26.1> ping github.com
+> 
+> 正在 Ping github.com [127.0.0.1] 具有 32 字节的数据:
+> 来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128
+> 来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128
+> 来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128
+> 来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128
+> 
+> 127.0.0.1 的 Ping 统计信息:
+>     数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，
+> 往返行程的估计时间(以毫秒为单位):
+>     最短 = 0ms，最长 = 0ms，平均 = 0ms
+> ```
+
+```shell
+# git 不进行ssl证书认证
+git config --global http.sslVerify false
+# git当前仓库不认证
+git config http.sslVerify false
+# git执行命令时不认证
+git -c http.sslVerify=false push
+```
 
 ### chrome --ignore-certificate-errors
 
