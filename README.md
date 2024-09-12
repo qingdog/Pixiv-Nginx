@@ -29,6 +29,7 @@ start .\nginx.exe
 tail  logs/error.log
 start .\nginx.exe
 wget https://github.com/mashirozx/Pixiv-Nginx --no-check-certificate
+#curl --insecure --location-trusted https://github.com/qingdog/cdn/archive/refs/heads/main.zip -o main.zip
 ```
 
 > ```shell--2024-07-24 10:30:46--  https://github.com/mashirozx/Pixiv-Nginx
