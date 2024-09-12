@@ -135,7 +135,30 @@ sed -n '/upstream github-com-lb/,/\t\t}/p' nginx.conf
                 }
 ```
 
+### 证书
 
+* 自签证书傻瓜式批处理包/【限初次使用】一键生成根证书和子证书.bat
+
+* 自签证书傻瓜式批处理包/config_childCA.txt
+
+  * ```shell
+    DNS.32 = github.com
+    DNS.33 = *.github.com
+    ```
+
+* 自签证书傻瓜式批处理包/【修改config_childCA.txt后使用】重新签发子证书.bat
+
+* chrome://settings/
+
+  * chrome://settings/security
+  * 管理证书 - 受信任的根证书颁发机构
+  * 导入 - 下一步 - 浏览 - 自签证书傻瓜式批处理包/pixiv.net.crt - 是
+  * pi
+  
+* ```shell
+  cp 自签证书傻瓜式批处理包/pixiv.net.crt conf/ca/pixiv.net.crt
+  cp 自签证书傻瓜式批处理包/pixiv.net.key conf/ca/pixiv.net.key
+  ```
 
 # Pixiv-Nginx
 

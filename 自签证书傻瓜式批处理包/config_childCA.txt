@@ -42,6 +42,10 @@ DNS.28 = upload.wikimedia.org
 DNS.29 = exhentai.org
 DNS.30 = e-hentai.org
 DNS.31 = forums.e-hentai.org
+DNS.32 = github.com
+DNS.33 = *.github.com
+DNS.34 = workers.dev
+DNS.35 = cctv.canary.workers.dev
 
 [ v3_req ]
 keyUsage				= digitalSignature
