@@ -160,6 +160,49 @@ sed -n '/upstream github-com-lb/,/\t\t}/p' nginx.conf
   cp 自签证书傻瓜式批处理包/pixiv.net.crt conf/ca/pixiv.net.crt
   cp 自签证书傻瓜式批处理包/pixiv.net.key conf/ca/pixiv.net.key
   ```
+  
+  ### 查看当前用户安装的证书
+  
+  ```powershell
+  Get-ChildItem Cert:\CurrentUser\My | sls FuckGFW
+  
+  [Subject]
+    CN=Pixiv.net, O=FuckGFW Foundation, C=CN
+  [Issuer]
+    CN=Pixiv.net, O=FuckGFW Foundation, C=CN
+  [Serial Number]
+    5BECEEB84BB054FE97AF3CA1E540E9AE0256360A
+  [Not Before]
+    2024/9/11 17:50:28
+  [Not After]
+    2034/9/9 17:50:28
+  [Thumbprint]
+    8AA9340D4DAB6404C9EF6ABF95F9AFDADD1B05F5
+  [Subject]
+    CN=PixivCA, O=FuckGFW Foundation, C=CN
+  [Issuer]
+    CN=Pixiv.net, O=FuckGFW Foundation, C=CN
+  [Serial Number]
+    02
+  [Not Before]
+    2024/9/11 17:53:09
+  [Not After]
+    2025/9/11 17:53:09
+  [Thumbprint]
+    7C03BA707D9629EB9DAEF06CF381C1926F81D755
+  ```
+  
+  * 删除证书
+  
+  ```powershell
+  #此命令从 My 证书存储中删除证书。
+  Remove-Item Cert:\LocalMachine\My\0751530261173474BDAB820A9868BE7BD9D92E75
+  
+  #它不影响私钥。你必须使用 -DeleteKey 参数来删除私钥和证书。
+  Remove-Item Cert:\LocalMachine\My\0751530261173474BDAB820A9868BE7BD9D92E75 -DeleteKey
+  ```
+  
+  
 
 # Pixiv-Nginx
 
