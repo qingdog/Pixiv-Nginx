@@ -196,10 +196,10 @@ sed -n '/upstream github-com-lb/,/\t\t}/p' nginx.conf
   
   ```powershell
   #此命令从 My 证书存储中删除证书。
-  Remove-Item Cert:\LocalMachine\My\0751530261173474BDAB820A9868BE7BD9D92E75
+  Remove-Item Cert:\CurrentUser\My\8AA9340D4DAB6404C9EF6ABF95F9AFDADD1B05F5
   
   #它不影响私钥。你必须使用 -DeleteKey 参数来删除私钥和证书。
-  Remove-Item Cert:\LocalMachine\My\0751530261173474BDAB820A9868BE7BD9D92E75 -DeleteKey
+  Remove-Item Cert:\CurrentUser\My\7C03BA707D9629EB9DAEF06CF381C1926F81D755 -DeleteKey
   ```
   
   
